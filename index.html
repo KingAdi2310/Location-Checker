@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loaction Checker</title>
+    <script>
+        function checkLoc() {
+            let location = prompt("Please enter your location (Amritsar, Chitkara University , Chandigarh):");
+
+            if (location === "Amritsar" || location === "Chitkara University" || location === "Chandigarh") {
+                let username = prompt("Input username:");
+                let password = prompt("Input password:");
+
+                if (valCreds(username, password)) {
+                    if (location === "Amritsar") {
+                        window.location.href = "https://www.google.com/maps/place/Amritsar,+Punjab/@31.6339793,74.8722642,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipNwerI1L35Dq1B4ODgvrt_3B7QFvJj04uBLhWX6!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNwerI1L35Dq1B4ODgvrt_3B7QFvJj04uBLhWX6%3Dw114-h86-k-no!7i4032!8i3024!4m7!3m6!1s0x391964aa569e7355:0xeea2605bee84ef7d!8m2!3d31.6339793!4d74.8722642!10e5!16zL20vMDI5a3B5?entry=ttu";
+                    } else if (location === "Chitkara University") {
+                        window.location.href = "https://www.google.com/maps/place/Chitkara+University/@30.5160865,76.6552717,17z/data=!4m10!1m2!2m1!1schitkara+university!3m6!1s0x390fc32344a6e2d7:0x81b346dee91799ca!8m2!3d30.5160865!4d76.6597778!15sChNjaGl0a2FyYSB1bml2ZXJzaXR5kgEScHJpdmF0ZV91bml2ZXJzaXR54AEA!16s%2Fm%2F04zzz06?entry=ttu";
+                    } else if (location === "Chandigarh") {
+                        window.location.href = "https://www.google.com/maps/place/Chandigarh,+India";
+                    }
+                } else {
+                    alert("Wrong credentials");
+                }
+            } else {
+                alert("Access denied");
+            }
+        }
+
+        function valCreds(username, password) {
+            
+            const validUsername = "Aditya";
+            const validPassword = "Ranssommoney2310@";
+            return username === validUsername && password === validPassword;
+        }
+    </script>
+</head>
+<body onload="checkLoc()">
+</body>
+</html>
